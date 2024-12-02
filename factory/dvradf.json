@@ -1,0 +1,9 @@
+{
+	"name": "dvradf",
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f9faa82a-afd1-468b-9ae7-974966695d0e",
+		"tenantId": "780a2765-36fb-4af1-9839-16ceb71c59a5"
+	}
+}
