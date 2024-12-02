@@ -1,0 +1,15 @@
+{
+	"name": "ds_db_students",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_server",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`students`"
+		}
+	}
+}
