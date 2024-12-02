@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dvradf"
+		},
+		"ls_dls_accountKey": {
+			"value": ""
+		},
+		"ls_sql_server_password": {
+			"value": ""
+		},
+		"ls_dls_properties_typeProperties_url": {
+			"value": "https://dvrdls15.dfs.core.windows.net/"
+		},
+		"ls_sql_server_properties_typeProperties_server": {
+			"value": "DESKTOP-GBOA63V"
+		},
+		"ls_sql_server_properties_typeProperties_database": {
+			"value": "employee"
+		},
+		"ls_sql_server_properties_typeProperties_username": {
+			"value": "azure_user"
+		}
+	}
+}
