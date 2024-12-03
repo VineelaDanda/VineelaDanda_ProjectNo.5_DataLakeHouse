@@ -126,36 +126,18 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "ParquetSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"type": "ParquetWriteSettings"
 						}
 					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
-							{
-								"source": {
-									"path": "$['address']['geolocation']['lat']"
-								},
-								"sink": {
-									"name": "lat"
-								}
-							},
-							{
-								"source": {
-									"path": "$['address']['geolocation']['long']"
-								},
-								"sink": {
-									"name": "long"
-								}
-							},
 							{
 								"source": {
 									"path": "$['address']['city']"
@@ -166,58 +148,10 @@
 							},
 							{
 								"source": {
-									"path": "$['address']['street']"
-								},
-								"sink": {
-									"name": "street"
-								}
-							},
-							{
-								"source": {
-									"path": "$['address']['number']"
-								},
-								"sink": {
-									"name": "number"
-								}
-							},
-							{
-								"source": {
-									"path": "$['address']['zipcode']"
-								},
-								"sink": {
-									"name": "zipcode"
-								}
-							},
-							{
-								"source": {
 									"path": "$['id']"
 								},
 								"sink": {
 									"name": "id"
-								}
-							},
-							{
-								"source": {
-									"path": "$['email']"
-								},
-								"sink": {
-									"name": "email"
-								}
-							},
-							{
-								"source": {
-									"path": "$['username']"
-								},
-								"sink": {
-									"name": "username"
-								}
-							},
-							{
-								"source": {
-									"path": "$['password']"
-								},
-								"sink": {
-									"name": "password"
 								}
 							},
 							{
@@ -235,22 +169,6 @@
 								"sink": {
 									"name": "lastname"
 								}
-							},
-							{
-								"source": {
-									"path": "$['phone']"
-								},
-								"sink": {
-									"name": "phone"
-								}
-							},
-							{
-								"source": {
-									"path": "$['__v']"
-								},
-								"sink": {
-									"name": "__v"
-								}
 							}
 						]
 					}
@@ -263,7 +181,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_dls_users",
+						"referenceName": "ds_dls_users1",
 						"type": "DatasetReference"
 					}
 				]

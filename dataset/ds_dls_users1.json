@@ -1,0 +1,19 @@
+{
+	"name": "ds_dls_users1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_dls1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "raw-bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
