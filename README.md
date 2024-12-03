@@ -10,6 +10,8 @@ Before starting, ensure we have the following Azure services set up:
 3.Azure Databricks.
 4.Azure Key Vault.
 5.Azure Synapse Analytics.
+![pre-requisites](https://github.com/user-attachments/assets/809cebe9-11ec-4af9-bcfb-82f01b1e1793)
+
 
 
 # Access to HTTP API and SQL Server for source data.
