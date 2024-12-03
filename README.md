@@ -1,4 +1,4 @@
-### project_data_lake_house
+# project_data_lake_house
 
 This project focuses on building a scalable data pipeline to ingest, transform, and store data in Azure Data Lake Storage (ADLS) Gen2 using Azure Data Factory (ADF), Azure Databricks, and Azure Synapse Analytics. Data is sourced from an HTTP API and Microsoft SQL Server, and it undergoes transformation and staging for further analysis.
 
