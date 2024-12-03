@@ -33,8 +33,22 @@ adls_access_key
 ![key vault and secret](https://github.com/user-attachments/assets/e778f9ea-93a7-4e49-b7b0-dab2f845e653)
 
 
-## 3. Data Ingestion via Azure Data Factory
- ### a. HTTP API Ingestion
+## 3. Setup linked services in Azure Data Factory (ADF)
+
+### a) For HTTP-API
+Create linked service for http-api with base url, service principal and azure key vault
+Test connection should be successful before creation.
+
+
+### b) For SQL-Server
+Create linked service for SQL-Server with on-premises/local server, service principal and azure key vault
+Test connection should be successful before creation.
+
+
+## 4. Data Ingestion via Azure Data Factory
+Upon creating the linked services for both HTTP-API and SQL-Server.
+
+ ### a) HTTP API Ingestion
 Create a pipeline in ADF to fetch data from the HTTP API.
 Source: HTTP dataset pointing to the API.
 Sink: ADLS Gen2 Bronze container.
@@ -52,8 +66,8 @@ Sink: ADLS Gen2 Bronze container.
 ![pipeline (http and server)](https://github.com/user-attachments/assets/7a9529d4-873a-4634-8c3f-f365c3fde1ec)
 
 
-
 ## 4. Data Transformation in Azure Databricks
+  
   ### a. Mount ADLS in Databricks
 Mount the ADLS containers in Databricks using the access key or Key Vault.
 ![http_databricks1](https://github.com/user-attachments/assets/1e415072-55c3-4e40-800d-893374f4a995)
@@ -62,7 +76,7 @@ Mount the ADLS containers in Databricks using the access key or Key Vault.
 ![sql_databricks2](https://github.com/user-attachments/assets/e9b8723d-077b-4570-8c7f-8360c9918a1e)
 
 
- ### b. Transform Data
+ ### b. Transform Data (Delta Processing)
 Use Databricks notebooks to clean and transform the data.
 Save the cleansed data into the Silver container.
 ![http_databricks3](https://github.com/user-attachments/assets/a7ea33d8-702a-49cc-a7cc-96ecc15bf7d9)
@@ -71,7 +85,7 @@ Save the cleansed data into the Silver container.
 ![sql_databricks3](https://github.com/user-attachments/assets/6fffd848-b852-41dd-b8e7-6265b983848b)
 
 
- ### c. Stage Analytical Data
+ ### c. Stage Analytical Data (ETL)
 Aggregate and enrich the data.
 Save the analytical-ready data in the Gold container.
 ![http_databricks6](https://github.com/user-attachments/assets/4b4bce30-fc00-4961-9045-1071a82257be)
@@ -81,6 +95,12 @@ Save the analytical-ready data in the Gold container.
 ## 5. Analytics with Azure Synapse
 Create an external table in Synapse Analytics pointing to the Gold container.
 Write SQL queries to analyze the data.
+
+### a) External table - Gold Container (HTTP-API)
+
+
+### b) External table - Gold Container (SQL-Server)
+
 
 
 ## Security Measures
