@@ -38,11 +38,12 @@ adls_access_key
 ### a) For HTTP-API
 Create linked service for http-api with base url, service principal and azure key vault
 Test connection should be successful before creation.
-
+![ls_http_api](https://github.com/user-attachments/assets/99db1177-4a34-4e71-9a98-da6dc69a3a8b)
 
 ### b) For SQL-Server
 Create linked service for SQL-Server with on-premises/local server, service principal and azure key vault
 Test connection should be successful before creation.
+![ls_sql_server](https://github.com/user-attachments/assets/c20d8fa2-8949-4998-9316-0006c8d15312)
 
 
 ## 4. Data Ingestion via Azure Data Factory
@@ -52,21 +53,17 @@ Upon creating the linked services for both HTTP-API and SQL-Server.
 Create a pipeline in ADF to fetch data from the HTTP API.
 Source: HTTP dataset pointing to the API.
 Sink: ADLS Gen2 Bronze container.
-![ls_http_api](https://github.com/user-attachments/assets/99db1177-4a34-4e71-9a98-da6dc69a3a8b)
 ![pipeline (http and server)](https://github.com/user-attachments/assets/afe4db08-9fd7-4f7a-8464-61501573813f)
-
-
 
  ### b. SQL Server Ingestion
 Set up a self-hosted integration runtime for on-premises server.
 Create a pipeline in ADF to copy data from SQL Server to the Bronze container.
 Source: SQL dataset.
 Sink: ADLS Gen2 Bronze container.
-![ls_sql_server](https://github.com/user-attachments/assets/c20d8fa2-8949-4998-9316-0006c8d15312)
 ![pipeline (http and server)](https://github.com/user-attachments/assets/7a9529d4-873a-4634-8c3f-f365c3fde1ec)
 
 
-## 4. Data Transformation in Azure Databricks
+## 5. Data Transformation in Azure Databricks
   
   ### a. Mount ADLS in Databricks
 Mount the ADLS containers in Databricks using the access key or Key Vault.
@@ -92,7 +89,7 @@ Save the analytical-ready data in the Gold container.
 ![sql_databricks4](https://github.com/user-attachments/assets/12c8aacf-7cc5-4988-9d1e-88cfbb759909)
 
 
-## 5. Analytics with Azure Synapse
+## 6. Analytics with Azure Synapse
 Create an external table in Synapse Analytics pointing to the Gold container.
 Write SQL queries to analyze the data.
 
