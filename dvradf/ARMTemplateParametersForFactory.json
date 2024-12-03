@@ -8,11 +8,20 @@
 		"ls_dls_accountKey": {
 			"value": ""
 		},
+		"ls_http_api_password": {
+			"value": ""
+		},
 		"ls_sql_server_password": {
 			"value": ""
 		},
 		"ls_dls_properties_typeProperties_url": {
 			"value": "https://dvrdls15.dfs.core.windows.net/"
+		},
+		"ls_http_api_properties_typeProperties_url": {
+			"value": "https://fakestoreapi.com"
+		},
+		"ls_http_api_properties_typeProperties_userName": {
+			"value": "vdanda"
 		},
 		"ls_sql_server_properties_typeProperties_server": {
 			"value": "DESKTOP-GBOA63V"
