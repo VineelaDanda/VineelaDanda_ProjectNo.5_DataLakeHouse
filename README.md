@@ -22,20 +22,22 @@ Before starting, ensure we have the following Azure services set up:
 
 ### a) For HTTP-API
 Create a storage account with ADLS Gen2 enabled. ie., dvrdls1504
+
 Set up the following containers:
 **Bronze:** For raw data ingestion.
-Silver: For cleansed and transformed data.
-Gold: For analytical-ready data.
+**Silver:** For cleansed and transformed data.
+**Gold:** For analytical-ready data.
 
 ![Containers (http)](https://github.com/user-attachments/assets/382ddee8-5473-4984-88e0-cc8fb7e25a98)
 
 
 ### b) For SQL-Server
 Create a storage account with ADLS Gen2 enabled. ie., dvrdls15
+
 Set up the following containers:
 **Bronze:** For raw data ingestion.
-Silver: For cleansed and transformed data.
-Gold: For analytical-ready data.
+**Silver:** For cleansed and transformed data.
+**Gold:** For analytical-ready data.
 
 ![Containers](https://github.com/user-attachments/assets/9008a271-baf9-43cc-bce5-b3a6403117a7)
 
@@ -116,7 +118,6 @@ Mount the ADLS containers in Databricks using the access key or Key Vault.
 
  ### b. Transform Data (Delta Processing)
 Use Databricks notebooks to clean and transform the data.
-Save the cleansed data into the Silver container.
 
 ![http_databricks notes 3](https://github.com/user-attachments/assets/d1d96d1a-3f50-48c2-9abe-286396e8512d)
 
@@ -126,13 +127,20 @@ Save the cleansed data into the Silver container.
 
 ![http_databricks notes 6](https://github.com/user-attachments/assets/76237e60-4e89-4d16-8465-3266c174f427)
 
+Save the cleansed data into the Silver container.
+
+![http_silver (aftr cleanup_dbricks)](https://github.com/user-attachments/assets/684349be-bf24-4577-84e5-878767a06d78)
+
  ### c. Stage Analytical Data (ETL)
 Aggregate and enrich the data.
-Save the analytical-ready data in the Gold container.
 
 ![http_databricks notes 7](https://github.com/user-attachments/assets/68ffc312-ea14-41d4-ac64-1163e7ccfcfc)
 
 ![http_databricks notes 8](https://github.com/user-attachments/assets/da90fdcd-f213-414e-9383-122f41f31aae)
+
+Save the analytical-ready data in the Gold container.
+
+![http_gold (refined aftr ETL_dbricks)](https://github.com/user-attachments/assets/208f8340-4e17-43f2-b0c8-17eec0c48a20)
 
 
 ### For SQL-Server
@@ -146,7 +154,6 @@ Mount the ADLS containers in Databricks using the access key or Key Vault.
 
  ### b. Transform Data (Delta Processing)
 Use Databricks notebooks to clean and transform the data.
-Save the cleansed data into the Silver container.
 
 ![sql_databricks notes 3](https://github.com/user-attachments/assets/edcebaf9-0fab-4273-8046-7d39af0cc7a3)
 
@@ -162,6 +169,8 @@ Save the cleansed data into the Silver container.
 
 ![sql_databricks notes 9](https://github.com/user-attachments/assets/9c030ba5-a14d-415d-b297-0f3a15f20d31)
 
+![sql_silver (aftr cleanup_dbricks)](https://github.com/user-attachments/assets/112a3478-950f-44cb-bc78-b8bcfa4007af)
+
  ### c. Stage Analytical Data (ETL)
 Aggregate and enrich the data.
 Save the analytical-ready data in the Gold container.
@@ -169,6 +178,8 @@ Save the analytical-ready data in the Gold container.
 ![sql_databricks notes 10](https://github.com/user-attachments/assets/710cdbc4-7f8b-49cf-adc6-1326080727d6)
 
 ![sql_databricks notes 11](https://github.com/user-attachments/assets/9c6bc171-6677-4b45-9db3-1614bf618829)
+
+![sql_gold (aftr ETL_dbricks)](https://github.com/user-attachments/assets/6e38fb21-5cb3-4061-ad94-2eafd76e4a49)
 
 
 ## 6. Analytics with Azure Synapse
